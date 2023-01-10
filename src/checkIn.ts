@@ -1,8 +1,8 @@
 import 'dotenv/config'
 import members from './config/members.js'
 import { attendanceInfoURL } from './config/urls.js'
-import { check, CheckStatus } from './utils/api.js'
-import hook from './utils/hook.js'
+import check, { CheckStatus } from './lib/check.js'
+import hook from './lib/hook.js'
 
 async function main() {
   try {

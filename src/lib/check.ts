@@ -1,14 +1,14 @@
 import got from 'got'
 import { Member } from '../config/members.js'
 import { ATTENDANCE_AJAX_URL } from '../config/urls.js'
-import formattedDate from './formattedDate.js'
+import formattedDate from '../lib/formattedDate.js'
 
 export enum CheckStatus {
   In = 'I',
   Out = 'O',
 }
 
-export const check = (member: Member, status: CheckStatus) =>
+const check = (member: Member, status: CheckStatus) =>
   got
     .post(ATTENDANCE_AJAX_URL, {
       form: {
@@ -29,3 +29,5 @@ export const check = (member: Member, status: CheckStatus) =>
       console.log(`[${status === CheckStatus.In ? '입실' : '퇴실'} 체크 완료] ${member.name} ${formattedDate()}`)
       return res.body
     })
+
+export default check

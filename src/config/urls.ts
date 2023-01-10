@@ -1,5 +1,5 @@
-import formattedDate from '../utils/formattedDate.js'
-import { Member } from './members'
+import { Member } from '../config/members.js'
+import formattedDate from '../lib/formattedDate.js'
 
 const BASE_URL = 'https://m.worldjob.or.kr:444/indvdl/epmtSprtMng'
 

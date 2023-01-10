@@ -3,8 +3,8 @@ import schedule from 'node-schedule'
 import members from './config/members.js'
 import { checkInRule, checkOutRule } from './config/rules.js'
 import { attendanceInfoURL } from './config/urls.js'
-import { check, CheckStatus } from './utils/api.js'
-import hook from './utils/hook.js'
+import check, { CheckStatus } from './lib/check.js'
+import hook from './lib/hook.js'
 
 const main = () => {
   schedule.scheduleJob(checkInRule, async (fireDate) => {
